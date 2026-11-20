@@ -1,9 +1,5 @@
 <p align="center">
-  <img src="assets/header.svg" alt="LAN-GER · Robotics, Simulation, Sensors" width="100%" />
-</p>
-
-<p align="center">
-  <img src="assets/typing.svg" alt="Hi, I'm LAN-GER. Exploring robotics and MuJoCo. Building ideas into reality." width="100%" />
+  <img src="assets/header.svg" alt="LAN-GER · 粒子背景与终端演示动画" width="100%" />
 </p>
 
 <p align="center"><b>机器人 · 仿真 · 传感器</b></p>
