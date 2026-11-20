@@ -25,4 +25,11 @@ reBot B601 RS 机械臂的 MuJoCo 仿真项目。
 
 欢迎查看项目，也欢迎通过对应仓库的 Issues 交流问题与想法。
 
+## 贡献图贪吃蛇
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/LAN-GER/LAN-GER/snake-assets/snake-dark.svg">
+  <img src="https://raw.githubusercontent.com/LAN-GER/LAN-GER/snake-assets/snake.svg" width="100%" alt="朱红色的贪吃蛇沿着 LAN-GER 的 GitHub 贡献日历移动，依次吃掉有贡献的方格">
+</picture>
+
 <p align="center"><sub>Learn by building. Keep exploring.</sub></p>
