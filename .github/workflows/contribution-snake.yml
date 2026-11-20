@@ -1,0 +1,51 @@
+name: Contribution snake
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 0 * * *'
+  push:
+    branches: [main]
+    paths: ['.github/workflows/contribution-snake.yml']
+
+concurrency:
+  group: contribution-snake
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: Draw the contribution calendar in light and dark colors
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            dist/snake.svg?color_snake=#C63321&color_dots=#F1EFE8,#D7D4CB,#A8A69D,#73766D,#353831
+            dist/snake-dark.svg?palette=github-dark&color_snake=#FF745E&color_dots=#252823,#474C43,#70766B,#A5AA9B,#D9DCCD
+
+      - name: Publish updated images to the snake-assets branch
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          test -s dist/snake.svg
+          test -s dist/snake-dark.svg
+          gh auth setup-git
+          git init --quiet --initial-branch=snake-assets published
+          cd published
+          git remote add origin "https://github.com/${GITHUB_REPOSITORY}.git"
+          existing=$(git ls-remote --heads origin refs/heads/snake-assets)
+          if [[ -n "$existing" ]]; then
+            git fetch --depth=1 origin refs/heads/snake-assets
+            git merge --ff-only FETCH_HEAD
+          fi
+          cp ../dist/snake.svg ../dist/snake-dark.svg .
+          git add -- snake.svg snake-dark.svg
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git -c user.name='github-actions[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Refresh contribution snake'
+          git push origin HEAD:refs/heads/snake-assets
