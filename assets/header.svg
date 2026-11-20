@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="280" viewBox="0 0 960 280" role="img" aria-labelledby="title desc">
+  <title id="title">LAN-GER</title>
+  <desc id="desc">Blue and cyan orbital animation. Robotics, simulation, sensors.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1"><stop stop-color="#0b1224"/><stop offset="1" stop-color="#123848"/></linearGradient>
+    <linearGradient id="line"><stop stop-color="#38bdf8"/><stop offset="1" stop-color="#5eead4"/></linearGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#a5f3fc" stroke-opacity=".055"/></pattern>
+    <clipPath id="crop"><rect width="960" height="280" rx="18"/></clipPath>
+  </defs>
+  <style>
+    .orbit{transform-origin:780px 140px;animation:rotate 24s linear infinite}
+    .orbit2{transform-origin:780px 140px;animation:rotate 34s linear infinite reverse}
+    .hello{animation:appear 1.4s ease-out both}
+    @keyframes rotate{to{transform:rotate(360deg)}}
+    @keyframes appear{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:translateY(0)}}
+    @media(prefers-reduced-motion:reduce){.orbit,.orbit2,.hello{animation:none}}
+  </style>
+  <g clip-path="url(#crop)">
+    <rect width="960" height="280" fill="url(#bg)"/>
+    <rect width="960" height="280" fill="url(#grid)"/>
+    <circle cx="780" cy="140" r="116" fill="none" stroke="#5eead4" stroke-opacity=".18"/>
+    <circle cx="780" cy="140" r="80" fill="none" stroke="#38bdf8" stroke-opacity=".25"/>
+    <circle cx="780" cy="140" r="44" fill="none" stroke="#5eead4" stroke-opacity=".32"/>
+    <g class="orbit"><ellipse cx="780" cy="140" rx="135" ry="48" fill="none" stroke="#38bdf8" stroke-opacity=".7"/><circle cx="915" cy="140" r="6" fill="#7dd3fc"/></g>
+    <g class="orbit2"><ellipse cx="780" cy="140" rx="110" ry="62" fill="none" stroke="#5eead4" stroke-opacity=".55"/><circle cx="670" cy="140" r="5" fill="#5eead4"/></g>
+    <circle cx="780" cy="140" r="8" fill="#a5f3fc"/>
+    <g class="hello" font-family="Segoe UI,Arial,sans-serif">
+      <text x="52" y="73" fill="#67e8f9" font-size="15" letter-spacing="4">HELLO, WORLD</text>
+      <text x="48" y="153" fill="#f0f9ff" font-size="70" font-weight="700" letter-spacing="2">LAN-GER</text>
+      <text x="52" y="198" fill="#bbd5e4" font-size="19">ROBOTICS / SIMULATION / SENSORS</text>
+    </g>
+    <path d="M0 268 Q240 237 480 264 T960 256 V280 H0Z" fill="#38bdf8" opacity=".12"/>
+    <rect x="52" y="224" width="76" height="3" rx="1.5" fill="url(#line)"/>
+  </g>
+</svg>
