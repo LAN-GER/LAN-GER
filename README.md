@@ -1,8 +1,9 @@
-<p align="center">
-  <img src="assets/header.svg" alt="LAN-GER · 粒子背景与终端演示动画" width="100%" />
-</p>
+<picture>
+  <source media="(max-width: 600px)" srcset="assets/header-mobile.svg">
+  <img src="assets/header.svg" width="100%" alt="LAN-GER · 朱红粒子环与 Linux 终端动画">
+</picture>
 
-<p align="center"><b>机器人 · 仿真 · 传感器</b></p>
+<p align="center"><b>机器人 · 仿真 · 传感器 · 嵌入式 · Linux</b></p>
 <p align="center">在代码与现实之间，把想法一步步变成作品。</p>
 
 ## 👋 关于我
